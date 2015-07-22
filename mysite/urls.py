@@ -22,3 +22,5 @@ urlpatterns = [
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'', include('blog.urls')),
 ]
+
+
