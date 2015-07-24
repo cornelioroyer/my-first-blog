@@ -1,0 +1,15 @@
+					<div class="control-group">
+					    <label for="textfield" class="control-label">Documento</label>
+						<div class="controls">
+                            		<textarea cols="80" id="editor1" name="editor1" rows="10"></textarea>
+							<script>
+
+								CKEDITOR.replace( 'editor1' );
+
+							</script>
+						</div>
+					</div>
+					
+					
+					  $fecha_crea = $registros['fecha_publicacion'];
+  $fecha_modi = $registros['fecha_modificacion'];
