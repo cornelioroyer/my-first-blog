@@ -3,7 +3,7 @@ $user = "planilla";
 $password = "planilla%";
 $dbname = "planilla";
 $port = "5432";
-$host = "200.75.216.83";
+$host = "localhost";
 
 $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
