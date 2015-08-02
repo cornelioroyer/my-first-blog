@@ -1,0 +1,14 @@
+{% if words.type_question = 2 %}
+	<h1>{{ words.english }}</h1>
+	<h1>{{ words.spanish }}</h1>
+	<h1>{{ words.puntos }}</h1>
+{% else %}
+	<h1>{{ words.spanish }}</h1>
+	<h1>{{ words.english }}</h1>
+	<h1>{{ words.puntos }}</h1>
+{% endif %}
+
+
+
+<a href="/words">Otra palabra</a>
+

@@ -1,0 +1,73 @@
+{% if words.type_question = 1 %}
+	<h1>{{ words.english }}</h1>
+{% else %}
+	<h1>{{ words.spanish }}</h1>
+{% endif %}
+
+<h1>Puntos  {{ words.puntos }}</h1>
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'words:vote' words.id %}" method="post">
+
+{% csrf_token %} 
+
+{% for opcion in opciones %}
+	{% if words.type_question = 1 %}
+		<input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}" />
+	    <label for="opcion{{ forloop.counter }}">{{ opcion.d_spanish }}</label><br />
+	{% else %}
+		<input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}" />
+	    <label for="opcion{{ forloop.counter }}">{{ opcion.d_english}}</label><br />
+	{% endif %}
+{% endfor %}
+<input type="submit" value="Escoja Una Opcion" />
+</form>
+
+
+<!-- 
+
+<h1>{{ words.english }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'words:vote' words.id %}" method="post">
+{% csrf_token %}
+{% for opciones in words.opciones_set.all. %}
+    <input type="radio" name="opciones" id="opciones{{ forloop.counter }}" value="{{ opciones.id }}" />
+    <label for="opciones{{ forloop.counter }}">{{ opciones.d_spanish }}</label><br />
+{% endfor %}
+<input type="submit" value="Vote" />
+</form>
+
+
+{% csrf_token %} 
+
+<form action="{% url 'words:vote' words.id %}" method="post">
+
+	<li><a href="/words/{{ opcion.id }}/vote">{{ opcion.d_spanish }}</a></li> 
+
+
+{# <form action="http://127.0.0.1:8000/words/" method="post"> #}
+
+
+{# <form action="{% url 'words:vote' opciones.id %}" method="post"> #}
+
+
+{# <form action="http://127.0.0.1:8000/words/" method="post"> #}
+
+{# <form action="{% url %}" method="post"> #}
+
+{# <form action="{% url 'words:vote' opciones.id %}" method="post"> #}
+
+{# <form action=" http://127.0.0.1:8000/results/" method="post"> #}
+
+{#  {% for choice in question.choice_set.all %}  #}
+
+
+{#     <li> {{ opcion.words2_id }} </li>       #}
+
+{#     <li> {{ opcion.words2_id }} </li>       #}
+
+-->
